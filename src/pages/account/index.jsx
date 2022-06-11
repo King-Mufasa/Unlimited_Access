@@ -10,7 +10,7 @@ import { countryList } from "../../utils/api";
 function AccountPage() {
   const [enableAlert, setEnableAlert] = useState(false);
   const [country, setCountry] = useState({ label: "Hong Kong", value: "hk" });
-  
+
   return (
     <div className="flex flex-col min-h-screen ">
       <div className="p-8">
@@ -22,34 +22,29 @@ function AccountPage() {
         <div className="max-w-3xl w-full space-y-8">
           <div>
             <p className="text-3xl font-semibold text-app-gray-900">
-              Pending Contacts
+              Account details
             </p>
             <p className="text-xm text-app-gray-500 mt-3">
-              You have 1 new contact request
+              PLEASE PROVIDE CORRECT AND ACCURATE INFORMATION AS IT WILL BE USED
+              FOR BILLING, CUSTOMER SERVICE AND PASSWORD RECOVERY SERVICES.
             </p>
           </div>
-          <div className="space-y-2">
-            <p className="text-app-gray-700 text-sm">Identification Code</p>
-            <div className="grid-cols-7 grid gap-2">
-              <IDCode>M</IDCode>
-              <IDCode>3</IDCode>
-              <IDCode>w</IDCode>
-              <IDCode>4</IDCode>
-              <IDCode>d</IDCode>
-              <IDCode>v</IDCode>
-              <IDCode>d</IDCode>
-            </div>
-          </div>
-          <Input label="Institut" hint="BOP Inst" />
-          <Input label="Inmate Number" hint="41 38 20 50" />
+
+          <Input label="E-mail adress" hint="me@unlimitedaccessnow.com" required/>
+          <Input label="Name" hint="John Doe" required/>
+          <Input label="Adress Line 1" hint="California" required />
+          <Input label="Adress Line 2" hint="California"  />
           <Input label="Name" hint="Johnes Robin" />
+          <Input label="City" hint="California" required />
           <Select
             value={country}
             isSearchable
             name="emoji"
             options={countryList}
-            onChange={(e)=>setCountry(e)}
+            onChange={(e) => setCountry(e)}
           />
+          <Input label="Zip Code" hint="--" required />
+          <Input label="Phone" hint="(+1) (446) --- --- ---" required />
           <div className="flex gap-2 items-center text-sm mt-5">
             <input
               type="checkbox"
