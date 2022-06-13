@@ -16,7 +16,10 @@ const SideBar = () => {
             <img src="/assets/image/logo.svg" alt="Unlimited Access" />
           </Link>
         </div>
-        <button className="hover:scale-125 active:scale-100 duration-75" onClick={() => setExpand(!expand)}>
+        <button
+          className="hover:scale-125 active:scale-100 duration-75"
+          onClick={() => setExpand(!expand)}
+        >
           <img src="/assets/icon/ico_menu.svg" alt="hamburger" />
         </button>
       </div>
@@ -25,7 +28,7 @@ const SideBar = () => {
           expand ? "translate-x-0 " : "translate-x-full"
         }`}
       >
-        <div className="w-full flex justify-end px-4 mb-8 h-18">
+        <div className="w-full flex justify-end px-4 mb-8 h-18 md:hidden">
           <button
             className="transform rotate-45 text-5xl text-app-gray-100 hover:scale-125 active:scale-100 duration-75"
             onClick={() => setExpand(false)}
