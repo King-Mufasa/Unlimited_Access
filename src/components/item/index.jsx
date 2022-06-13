@@ -25,7 +25,7 @@ export const SideBarItem = (props) => {
             location.pathname === path ? "bg-app-gray-700" : ""
           } rounded-lg flex gap-3 p-5 xl:text-xl font-medium text-app-gray-100`}
         >
-          <img src={`/assets/icon/ico_${icon}.svg`} alt="icon" />
+          {icon ? <img src={`/assets/icon/ico_${icon}.svg`} alt="icon" />:<div className="w-8"></div>}
           <p>{label}</p>
         </div>
       </Link>

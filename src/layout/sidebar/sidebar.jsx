@@ -6,9 +6,10 @@ import { SideBarItem } from "../../components/item";
 const SideBar = () => {
   const [keyword, setKeyword] = useState("");
   const [expand, setExpand] = useState(false);
+  const [expandEmail, setExpandEmail] = useState(false);
   return (
     <div
-      className={`flex flex-col md:min-h-screen relative md:absolute left-0 w-full md:max-w-sm lg:max-w-md`}
+      className={`flex flex-col md:h-screen  relative md:absolute left-0 w-full md:max-w-xs`}
     >
       <div className="flex justify-between md:hidden w-full h-18 bg-white px-6">
         <div className=" md:hidden h-full items-center flex">
@@ -16,7 +17,10 @@ const SideBar = () => {
             <img src="/assets/image/logo.svg" alt="Unlimited Access" />
           </Link>
         </div>
-        <button className="hover:scale-125 active:scale-100 duration-75" onClick={() => setExpand(!expand)}>
+        <button
+          className="hover:scale-125 active:scale-100 duration-75"
+          onClick={() => setExpand(!expand)}
+        >
           <img src="/assets/icon/ico_menu.svg" alt="hamburger" />
         </button>
       </div>
@@ -25,7 +29,7 @@ const SideBar = () => {
           expand ? "translate-x-0 " : "translate-x-full"
         }`}
       >
-        <div className="w-full flex justify-end px-4 mb-8 h-18">
+        <div className="w-full flex justify-end px-4 mb-8 h-18 md:hidden">
           <button
             className="transform rotate-45 text-5xl text-app-gray-100 hover:scale-125 active:scale-100 duration-75"
             onClick={() => setExpand(false)}
@@ -50,10 +54,32 @@ const SideBar = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col flex-1 px-4">
+        <div className="flex flex-col flex-1 px-4 overflow-auto">
           <ul className="space-y-2">
             <SideBarItem path="/dashboard" label="Dashboard" icon="dashboard" />
             <SideBarItem path="/mailbox" label="Mailbox" icon="mailbox" />
+            <li>
+              <button
+                className={`
+                     rounded-lg flex gap-3 p-5 xl:text-xl font-medium text-app-gray-100 w-full justify-between items-center`}
+                onClick={() => setExpandEmail(!expandEmail)}
+              >
+                <div className="flex gap-3">
+                  <img src={`/assets/icon/ico_mailbox.svg`} alt="icon" />
+                  <p>Mailbox</p>
+                </div>
+                <img src="/assets/icon/ico_up.svg" alt="up" className={`transform  ${expandEmail ? "rotate-0":"rotate-180"} duration-300`}/>
+              </button>
+            </li>
+
+            <Expand open={expandEmail}>
+              <ul>
+                <SideBarItem path="/new" label="New message" />
+                <SideBarItem path="/inbox" label="Inbox" />
+                <SideBarItem path="/draft" label="Draft message" />
+                <SideBarItem path="/sent" label="Sent message" />
+              </ul>
+            </Expand>
             <SideBarItem
               path="/account"
               label="Premier Account"
