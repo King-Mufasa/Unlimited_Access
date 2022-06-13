@@ -1,12 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { NegativeButton, PrimaryButton } from "../../components/button";
 import { Input } from "../../components/input";
 import { IDCode } from "../../components/item";
 
 function PendingContactPage() {
-  const [enableAlert, setEnableAlert] = useState(false)
+  const navigate = useNavigate();
+  const [enableAlert, setEnableAlert] = useState(false);
+
+  const submitHandler = () => {
+    navigate("/dashboard");
+  };
   return (
     <div className="flex flex-col min-h-screen ">
       <div className="p-8">
@@ -46,7 +51,7 @@ function PendingContactPage() {
               onChange={(e) => setEnableAlert(!enableAlert)}
             />
             <div className="">
-            Enable E-mail alerts  
+              Enable E-mail alerts
               <Link to={"/term"}>
                 <span className="text-app-primary underline">
                   {" "}
@@ -55,15 +60,15 @@ function PendingContactPage() {
               </Link>
             </div>
           </div>
-          <PrimaryButton className="w-full">
-                <div className="flex w-full items-center justify-center">
-                  Next
-                  <img src="/assets/icon/ico_next.svg" alt="right" />
-                </div>
-              </PrimaryButton>
-              <Link to={"/"} className="">
-                <NegativeButton className="w-full mt-5">Cancel</NegativeButton>
-              </Link>
+          <PrimaryButton className="w-full" action={submitHandler}>
+            <div className="flex w-full items-center justify-center">
+              Next
+              <img src="/assets/icon/ico_next.svg" alt="right" />
+            </div>
+          </PrimaryButton>
+          <Link to={"/"} className="">
+            <NegativeButton className="w-full mt-5">Cancel</NegativeButton>
+          </Link>
         </div>
       </div>
       <div className="flex justify-between p-8 text-app-gray-500 text-sm flex-col sm:flex-row items-center">
