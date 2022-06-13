@@ -11,13 +11,13 @@ function LoginPage() {
   const [remember, setRemember] = useState(false);
 
   const loginHandler = () => {
-    navigate("/");
+    navigate("/pending-contact");
   };
 
   return (
     <div className="flex justify-between min-h-screen">
       <div className="w-full flex flex-col">
-      <div className="p-8">
+        <div className="p-8">
           <Link to={"/"}>
             <img src="/assets/image/logo.svg" alt="Unlimited Access" />
           </Link>
@@ -37,7 +37,7 @@ function LoginPage() {
           <div className="bg-app-primary-200 h-full w-full rounded-half"></div>
           <div className="bg-app-primary-700 h-full w-full rounded-b-half"></div>
         </div>
-        
+
         <div className="flex-1 flex flex-col items-center justify-center">
           <div className="max-w-lg w-full px-4">
             <div className="sm:px-4 lg:px-20 flex flex-col justify-center h-full">
@@ -75,7 +75,10 @@ function LoginPage() {
                     onChange={(e) => setRemember(!remember)}
                     type="checkbox"
                   />
-                  <label htmlFor="remember" className="text-app-gray-700 text-sm">
+                  <label
+                    htmlFor="remember"
+                    className="text-app-gray-700 text-sm"
+                  >
                     Remember
                   </label>
                 </div>

@@ -476,3 +476,121 @@ export const countryList = [
   { label: "Zambia", dial_code: "+260", value: "ZM", flag: "🇿🇲" },
   { label: "Zimbabwe", dial_code: "+263", value: "ZW", flag: "🇿🇼" },
 ];
+
+export const mailList = [
+  {
+    mailId: "1",
+    sender: "Machen Phone",
+    read: false,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "2",
+    sender: "John Brawon",
+    read: false,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "3",
+    sender: "Ashuly Graham",
+    read: false,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "4",
+    sender: "Leon Scott Kenedy",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "5",
+    sender: "Shery Serah",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "6",
+    sender: "Jack Roc",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "7",
+    sender: "Cerel Korh",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "8",
+    sender: "Soush Alexa",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "9",
+    sender: "Ruhan Csh",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+
+  {
+    mailId: "10",
+    sender: "Kushina",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "11",
+    sender: "Sarah Berist",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "12",
+    sender: "Macin Bergin",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "13",
+    sender: "Ashuly Graham",
+    read: false,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "14",
+    sender: "Leon Scott Kenedy",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "15",
+    sender: "Shery Serah",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "16",
+    sender: "Jack Roc",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "17",
+    sender: "Cerel Korh",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "18",
+    sender: "Soush Alexa",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+  {
+    mailId: "19",
+    sender: "Ruhan Csh",
+    read: true,
+    time: "6/13/2022, 3:11:25 PM"
+  },
+]

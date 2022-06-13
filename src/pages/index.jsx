@@ -7,6 +7,7 @@ import LoginPage from "./login";
 import BlankPage from "./404/404";
 import PendingContactPage from "./pending-contact";
 import AccountPage from "./account";
+import Dashboard from "./dashboard";
 
 const Pages = (props) => {
   return (
@@ -17,6 +18,7 @@ const Pages = (props) => {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/pending-contact" element={<PendingContactPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="*" element={<BlankPage />} />
         </Routes>
