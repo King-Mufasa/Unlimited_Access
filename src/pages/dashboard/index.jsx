@@ -6,10 +6,10 @@ import { mailList } from "../../utils/api";
 
 function Dashboard() {
   return (
-    <Layout page="dashboard">
+    <Layout page="dashboard" sidebar>
       <div className="flex md:py-3 md:h-screen overflow-auto">
         <div className="md:max-w-xs w-full md:block hidden flex-shrink-0"></div>
-        <div className="bg-white md:rounded-l-4xl flex flex-col border-b border-app-gray-200">
+        <div className="bg-white md:rounded-l-4xl flex flex-col border-b border-app-gray-200 w-full">
           <div className=" w-full p-8 flex flex-col gap-6 overflow-auto">
             <div className=" pb-5">
               <div className="flex justify-between flex-col sm:flex-row gap-2 sm:items-center items-start">

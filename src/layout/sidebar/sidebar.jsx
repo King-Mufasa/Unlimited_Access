@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Expand from "react-expand-animated";
 import { SideBarItem } from "../../components/item";
 
 const SideBar = () => {
+  const location = useLocation()
   const [keyword, setKeyword] = useState("");
   const [expand, setExpand] = useState(false);
-  const [expandEmail, setExpandEmail] = useState(false);
+  const [expandEmail, setExpandEmail] = useState(location.pathname.includes("/mail/"));
   return (
     <div
       className={`flex flex-col md:h-screen  relative md:absolute left-0 w-full md:max-w-xs`}
@@ -57,7 +58,6 @@ const SideBar = () => {
         <div className="flex flex-col flex-1 px-4 overflow-auto">
           <ul className="space-y-2">
             <SideBarItem path="/dashboard" label="Dashboard" icon="dashboard" />
-            <SideBarItem path="/mailbox" label="Mailbox" icon="mailbox" />
             <li>
               <button
                 className={`
@@ -74,10 +74,10 @@ const SideBar = () => {
 
             <Expand open={expandEmail}>
               <ul>
-                <SideBarItem path="/new" label="New message" />
-                <SideBarItem path="/inbox" label="Inbox" />
-                <SideBarItem path="/draft" label="Draft message" />
-                <SideBarItem path="/sent" label="Sent message" />
+                <SideBarItem path="/mail/new" label="New message" />
+                <SideBarItem path="/mail/inbox" label="Inbox" />
+                <SideBarItem path="/mail/draft" label="Draft message" />
+                <SideBarItem path="/mail/sent" label="Sent message" />
               </ul>
             </Expand>
             <SideBarItem
