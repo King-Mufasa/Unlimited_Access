@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Table, Column, HeaderCell, Cell } from "rsuite-table";
+import "rsuite-table/dist/css/rsuite-table.css";
 import { PrimaryButton, StandardButton } from "../../components/button";
 import { Input } from "../../components/input";
 import { MailItem, SocialAppItem } from "../../components/item";
 import TabList from "../../components/tab/tablist";
 import Layout from "../../layout/layout";
-import { mailList, socialAppList } from "../../utils/api";
+import { invoiceDataList, mailList, socialAppList } from "../../utils/api";
 
 function Dashboard() {
   const [currentTab, setCurrentTab] = useState(0);
@@ -28,12 +30,19 @@ function Dashboard() {
   ];
   const totalUser = 20;
   const proUser = 14;
+
+  const ImageCell = ({ rowData, dataKey, ...rest }) => (
+    <Cell {...rest}>
+      <img src="/assets/icon/ico_file.svg" alt="file" />
+    </Cell>
+  );
+
   return (
     <Layout page="dashboard" sidebar>
       <div className="flex md:py-3 md:h-screen overflow-auto">
         <div className="md:max-w-xs w-full md:block hidden flex-shrink-0"></div>
         <div className="bg-white md:rounded-l-4xl flex flex-col border-b border-app-gray-200 w-full ">
-          <div className=" w-full p-8 flex flex-col overflow-auto body-container">
+          <div className=" w-full p-8 flex flex-col overflow-auto sm:body-container">
             <div className=" pb-5">
               <div className="flex justify-between flex-col sm:flex-row gap-2 sm:items-center items-start">
                 <div>
@@ -56,6 +65,7 @@ function Dashboard() {
                     setTab={setCurrentTab}
                     currentTab={currentTab}
                     key={idx}
+                    autoHeight
                   >
                     <div className="flex items-center gap-3 font-medium">
                       <p>{tab.label}</p>
@@ -188,10 +198,15 @@ function Dashboard() {
                         <div className="flex items-start gap-4 sm:flex-row flex-col">
                           <img src="/assets/image/logo_visa.svg" alt="visa" />
                           <div className="text-app-gray-500">
-                            <p className="text-app-gray-700 font-medium">Visa ending in 1234</p>
+                            <p className="text-app-gray-700 font-medium">
+                              Visa ending in 1234
+                            </p>
                             <p>Expiry 06/2024</p>
                             <div className="flex gap-2 items-center mt-2">
-                              <img src="/assets/icon/ico_mail.svg" alt="email" />
+                              <img
+                                src="/assets/icon/ico_mail.svg"
+                                alt="email"
+                              />
                               <p>billing@untitledui.com</p>
                             </div>
                           </div>
@@ -202,12 +217,90 @@ function Dashboard() {
                   </div>
                 </div>
 
-                <div className="flex-1 overflow-auto rounded-2xl md:rounded-l-3xl border shadow-md px-6 py-9 flex flex-col">
-                  <ul className="divide-y">
-                    {mailList.map((mail, idx) => (
-                      <MailItem mail={mail} key={idx} />
+                <div className=" rounded-2xl md:rounded-l-3xl border shadow-md px-6 py-9 flex flex-col">
+                  {/* <ul>
+                    {invoiceDataList.map((data, idx)=>(
+                      <
                     ))}
-                  </ul>
+                  </ul> */}
+                  <Table data={invoiceDataList} className="w-full">
+                    <Column width={300}>
+                      <HeaderCell>
+                        <div className="flex items-center">
+                          <input type="checkbox" /><p className="ml-2">Invoice</p></div></HeaderCell>
+                      <Cell className="flex items-center">
+                        {(rowData, rowIndex) => {
+                          return (
+                            <div
+                              key={rowIndex}
+                              className="flex items-center gap-2"
+                            >
+                              <input type="checkbox" />
+                              <img src="/assets/icon/ico_file.svg" alt="file" />
+                              <p className="text-app-gray-900 font-medium">
+                                {rowData.id}
+                              </p>
+                            </div>
+                          );
+                        }}
+                      </Cell>
+                    </Column>
+                    <Column width={150} resizable>
+                      <HeaderCell>Billing date</HeaderCell>
+                      <Cell dataKey="date" />
+                    </Column>
+                    <Column width={100} resizable>
+                      <HeaderCell>Status</HeaderCell>
+                      <Cell className="flex items-center">
+                        {(rowData, rowIndex) => {
+                          return (
+                            <div className="w-full flex items-center">
+                              <div
+                                className={`${
+                                  rowData.status === "paid"
+                                    ? "bg-app-green-100"
+                                    : "bg-app-red-300"
+                                } px-4 rounded-full flex items-center`}
+                              >
+                                <p
+                                  className={`${
+                                    rowData.status === "paid"
+                                      ? "text-app-green-700"
+                                      : "text-app-red-700"
+                                  } capitalize`}
+                                >
+                                  {rowData.status}
+                                </p>
+                              </div>
+                            </div>
+                          );
+                        }}
+                      </Cell>
+                    </Column>
+                    <Column width={150} resizable>
+                      <HeaderCell>Amount</HeaderCell>
+                      <Cell dataKey="amount" />
+                    </Column>
+                    <Column width={100} resizable>
+                      <HeaderCell>Plan</HeaderCell>
+                      <Cell dataKey="plan" />
+                    </Column>
+                    <Column width={100} resizable>
+                      <HeaderCell></HeaderCell>
+                      <Cell className="flex items-center">
+                        {(rowData, rowIndex) => {
+                          return (
+                            <a
+                              className="text-app-primary font-medium text-sm"
+                              href={rowData.download}
+                            >
+                              Download
+                            </a>
+                          );
+                        }}
+                      </Cell>
+                    </Column>
+                  </Table>
                 </div>
               </div>
             )}

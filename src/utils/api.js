@@ -597,39 +597,114 @@ export const mailList = [
 
 export const socialAppList = [
   {
-    name:"Linear",
-    desc:"Streamline software projects, sprints, tasks, and bug tracking.",
-    logo:"logo_linear",
-    enabled:true
+    name: "Linear",
+    desc: "Streamline software projects, sprints, tasks, and bug tracking.",
+    logo: "logo_linear",
+    enabled: true
   },
   {
-    name:"GitHub",
-    desc:"Link pull requests and automate workflows.",
-    logo:"logo_github",
-    enabled:true
+    name: "GitHub",
+    desc: "Link pull requests and automate workflows.",
+    logo: "logo_github",
+    enabled: true
   },
   {
-    name:"Figma",
-    desc:"Embed file previews in projects.",
-    logo:"logo_figma",
-    enabled:true
+    name: "Figma",
+    desc: "Embed file previews in projects.",
+    logo: "logo_figma",
+    enabled: true
   },
   {
-    name:"Zapier",
-    desc:"Build custom automations and integrations with other apps.",
-    logo:"logo_zapier",
-    enabled:true
+    name: "Zapier",
+    desc: "Build custom automations and integrations with other apps.",
+    logo: "logo_zapier",
+    enabled: true
   },
   {
-    name:"Notion",
-    desc:"Embed notion pages and notes in projects.",
-    logo:"logo_notion",
-    enabled:true
+    name: "Notion",
+    desc: "Embed notion pages and notes in projects.",
+    logo: "logo_notion",
+    enabled: true
   },
   {
-    name:"Slack",
-    desc:"Send notifications to channels and create projects from messages.",
-    logo:"logo_slack",
-    enabled:true
+    name: "Slack",
+    desc: "Send notifications to channels and create projects from messages.",
+    logo: "logo_slack",
+    enabled: true
   },
 ]
+
+export const invoiceDataList = [
+  {
+    id:"Invoice #007 – Dec 2022",
+    status:"paid",
+    download:"https://google.com",
+    amount:"USD $10.00",
+    plan:"Basic plan",
+    date:"Dec 1, 2022"
+  },
+  {
+    id:"Invoice #007 – Dec 2022",
+    status:"paid",
+    download:"https://google.com",
+    amount:"USD $10.00",
+    plan:"Basic plan",
+    date:"Dec 1, 2022"
+  },
+  {
+    id:"Invoice #007 – Dec 2022",
+    status:"paid",
+    download:"https://google.com",
+    amount:"USD $10.00",
+    plan:"Basic plan",
+    date:"Dec 1, 2022"
+  },
+  {
+    id:"Invoice #007 – Dec 2022",
+    status:"paid",
+    download:"https://google.com",
+    amount:"USD $10.00",
+    plan:"Basic plan",
+    date:"Dec 1, 2022"
+  },
+  {
+    id:"Invoice #007 – Dec 2022",
+    status:"paid",
+    download:"https://google.com",
+    amount:"USD $10.00",
+    plan:"Basic plan",
+    date:"Dec 1, 2022"
+  },
+  {
+    id:"Invoice #007 – Dec 2022",
+    status:"paid",
+    download:"https://google.com",
+    amount:"USD $10.00",
+    plan:"Basic plan",
+    date:"Dec 1, 2022"
+  },
+  {
+    id:"Invoice #007 – Dec 2022",
+    status:"paid",
+    download:"https://google.com",
+    amount:"USD $10.00",
+    plan:"Basic plan",
+    date:"Dec 1, 2022"
+  },
+  {
+    id:"Invoice #007 – Dec 2022",
+    status:"paid",
+    download:"https://google.com",
+    amount:"USD $10.00",
+    plan:"Basic plan",
+    date:"Dec 1, 2022"
+  },
+  {
+    id:"Invoice #007 – Dec 2022",
+    status:"paid",
+    download:"https://google.com",
+    amount:"USD $10.00",
+    plan:"Basic plan",
+    date:"Dec 1, 2022"
+  },
+];
