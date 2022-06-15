@@ -4,19 +4,19 @@ import Footer from "./footer/footer";
 import NavBar from "./navbar/navbar";
 import SideBar from "./sidebar/sidebar";
 
-const Layout = ({ children, title, selectLang, openLang, page = "home" }) => {
+const Layout = ({ children, title, selectLang, openLang, page = "home", sidebar=false }) => {
   return (
     <div
       className={`flex flex-col items-center min-h-screen justify-between overflow-x-hidden text-app-black-100 relative ${
-        page === "dashboard" ? "bg-app-gray-900" : ""
+        sidebar ? "bg-app-gray-900" : ""
       }`}
     >
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      {page !== "dashboard" ? <NavBar /> : <SideBar />}
+      {!sidebar ? <NavBar /> : <SideBar />}
       <main className="w-full flex-1">{children}</main>
-      {page !== "dashboard" ? <Footer /> : <div></div>}
+      {!sidebar ? <Footer /> : <div></div>}
     </div>
   );
 };

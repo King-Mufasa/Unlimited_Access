@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Expand from "react-expand-animated";
 import { SideBarItem } from "../../components/item";
 
 const SideBar = () => {
+  const location = useLocation();
   const [keyword, setKeyword] = useState("");
   const [expand, setExpand] = useState(false);
-  const [expandEmail, setExpandEmail] = useState(false);
+  const [expandEmail, setExpandEmail] = useState(
+    location.pathname.includes("/mail/")
+  );
   return (
     <div
       className={`flex flex-col md:h-screen  relative md:absolute left-0 w-full md:max-w-xs`}
@@ -54,40 +57,64 @@ const SideBar = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col flex-1 px-4 overflow-auto">
+        <div className="flex flex-col flex-1 overflow-auto px-4">
           <ul className="space-y-2">
             <SideBarItem path="/dashboard" label="Dashboard" icon="dashboard" />
-            <SideBarItem path="/mailbox" label="Mailbox" icon="mailbox" />
             <li>
               <button
                 className={`
-                     rounded-lg flex gap-3 p-5 xl:text-xl font-medium text-app-gray-100 w-full justify-between items-center`}
+                     rounded-lg flex gap-3 p-5 xl:text-lg font-medium text-app-gray-100 w-full justify-between items-center`}
                 onClick={() => setExpandEmail(!expandEmail)}
               >
                 <div className="flex gap-3">
                   <img src={`/assets/icon/ico_mailbox.svg`} alt="icon" />
                   <p>Mailbox</p>
                 </div>
-                <img src="/assets/icon/ico_up.svg" alt="up" className={`transform  ${expandEmail ? "rotate-0":"rotate-180"} duration-300`}/>
+                <img
+                  src="/assets/icon/ico_up.svg"
+                  alt="up"
+                  className={`transform  ${
+                    expandEmail ? "rotate-0" : "rotate-180"
+                  } duration-300`}
+                />
               </button>
             </li>
-
             <Expand open={expandEmail}>
               <ul>
-                <SideBarItem path="/new" label="New message" />
-                <SideBarItem path="/inbox" label="Inbox" />
-                <SideBarItem path="/draft" label="Draft message" />
-                <SideBarItem path="/sent" label="Sent message" />
+                <SideBarItem path="/mail/new" label="New message" />
+                <SideBarItem path="/mail/inbox" label="Inbox" />
+                <SideBarItem path="/mail/draft" label="Draft message" />
+                <SideBarItem path="/mail/sent" label="Sent message" />
               </ul>
             </Expand>
             <SideBarItem
-              path="/account"
+              path="/recharge"
+              label="Recharge Account"
+              icon="charge"
+            />
+            <SideBarItem
+              path="/premier"
               label="Premier Account"
               icon="account"
             />
+            <SideBarItem
+              path="/send-money"
+              label="Send money to inmate"
+              icon="dollar"
+            />
+            <SideBarItem
+              path="/picture-service"
+              label="Pictures"
+              icon="picture"
+            />
+            <SideBarItem
+              path="/text-service"
+              label="Text Services"
+              icon="msg"
+            />
           </ul>
         </div>
-        <div className="py-6">
+        <div className="py-6 px-4">
           <ul>
             <SideBarItem path="/support" label="Support" icon="support" />
             <SideBarItem
