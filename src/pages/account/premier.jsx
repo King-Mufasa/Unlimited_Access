@@ -38,10 +38,13 @@ const PremierPage = () => {
                   application requires Android 2.3 and up. Android is a
                   trademark of Google Inc.
                 </p>
-                <p className="text-sm text-right mt-6">Try it free for 14 days</p>
+                <p className="text-sm text-right mt-6">
+                  Try it free for 14 days
+                </p>
                 <div className="w-full justify-end flex">
                   <PrimaryButton className="mt-4">
-                    <p className="text-sm">Free Trial</p></PrimaryButton>
+                    <p className="text-sm">Free Trial</p>
+                  </PrimaryButton>
                 </div>
               </div>
               <div className="space-y-5 sm:px-8">
@@ -59,13 +62,11 @@ const PremierPage = () => {
                 <Input label="Total Charge:" hint="$6.00" />
               </div>
               <div className="flex items-center gap-5 w-full justify-center mt-14">
-              <PrimaryButton className="max-w-xs w-full">
-                Next
-              </PrimaryButton>
-              <NegativeButton className="max-w-xs w-full">
-                Cancel
-              </NegativeButton>
-            </div>
+                <PrimaryButton className="max-w-xs w-full">Next</PrimaryButton>
+                <NegativeButton className="max-w-xs w-full">
+                  Cancel
+                </NegativeButton>
+              </div>
             </div>
           </div>
         </div>
