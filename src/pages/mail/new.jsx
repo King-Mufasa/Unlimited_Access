@@ -6,6 +6,9 @@ import Layout from "../../layout/layout";
 const EmailNewPage = () => {
   const editor = useRef(null);
   const [content, setContent] = useState("");
+  const [placeholder, setPlaceholder] = useState("");
+
+
 
   return (
     <Layout page="draft" sidebar>
@@ -27,8 +30,6 @@ const EmailNewPage = () => {
               ref={editor}
               value={content}
               tabIndex={1} // tabIndex of textarea
-              onBlur={(newContent) => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
-              onChange={(newContent) => {}}
             />
           </div>
         </div>
