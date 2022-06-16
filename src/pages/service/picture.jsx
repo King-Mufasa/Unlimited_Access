@@ -6,7 +6,7 @@ const PictureServicePage = () => {
     <Layout page="draft" sidebar>
       <div className="flex md:py-3 md:h-screen overflow-auto">
         <div className="md:max-w-xs w-full md:block hidden flex-shrink-0"></div>
-        <div className="bg-white md:rounded-l-4xl flex flex-col border-b border-app-gray-200 w-full">
+        <div className="bg-white md:rounded-l-4xl flex flex-col border-b border-app-gray-200 w-full md:min-h-max min-h-screen">
           <div className=" w-full p-8 flex flex-col gap-6 overflow-auto">
             <div className=" pb-5">
               <p className="font-medium text-app-gray-900 text-3xl mt-2">
@@ -14,8 +14,8 @@ const PictureServicePage = () => {
               </p>
             </div>
           </div>
-          <div className="px-8">
-            <div className="p-8">
+          <div className="px-4 sm:px-8">
+            <div className="p-4 sm:p-8">
               <p className="text-app-gray-700 font-medium">
                 Upload your pictures
               </p>
@@ -23,9 +23,9 @@ const PictureServicePage = () => {
                 This will be displayed on your profile.
               </p>
             </div>
-            <div className="border border-app-gray-200 flex flex-col items-center text-app-gray-500 py-4">
+            <div className="border border-app-gray-200 flex flex-col items-center text-app-gray-500 py-4 rounded-md px-2">
               <img src="/assets/icon/ico_featured.svg" alt="featured" />
-              <p className="">
+              <p className="text-center">
                 <button>
                   <span className="text-app-primary font-medium">
                     Click to upload
@@ -33,7 +33,7 @@ const PictureServicePage = () => {
                 </button>{" "}
                 or drag and drop
               </p>
-              <p>SVG, PNG, JPG or GIF (max. 800x400px)</p>
+              <p className="text-center">SVG, PNG, JPG or GIF (max. 800x400px)</p>
             </div>
             <div className="flex justify-end w-full py-8">
               <PrimaryButton>Upload</PrimaryButton>

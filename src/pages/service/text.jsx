@@ -7,15 +7,15 @@ const TextServicePage = () => {
     <Layout page="draft" sidebar>
       <div className="flex md:py-3 md:h-screen overflow-auto">
         <div className="md:max-w-xs w-full md:block hidden flex-shrink-0"></div>
-        <div className="bg-white md:rounded-l-4xl flex flex-col border-b border-app-gray-200 w-full">
-          <div className=" w-full p-8 flex flex-col gap-6 overflow-auto">
+        <div className="bg-white md:rounded-l-4xl flex flex-col border-b border-app-gray-200 w-full md:min-h-max min-h-screen">
+          <div className=" w-full p-4 sm:p-8 flex flex-col gap-6 overflow-auto">
             <div className=" pb-5">
               <p className="font-medium text-app-gray-900 text-3xl mt-2">
               Manage SMS Account - Verify
               </p>
             </div>
             <div>
-              <div className="px-8 text-app-gray-500">
+              <div className="px-4 sm:px-8 text-app-gray-500">
                 <p className="leading-7 text-sm">
                   * Stay in contact with your loved ones without logging into
                   your CorrLinks account. <br />
@@ -39,7 +39,7 @@ const TextServicePage = () => {
                   </PrimaryButton>
                 </div>
               </div>
-              <div className="space-y-5 px-8">
+              <div className="space-y-5 px-4 sm:px-8 mt-2">
                 <Input label="Carrier Name: " required hint="AT&T" />
                 <Input label="Phone number: " required hint="(+1)  456 - 789 - 7894" />
               </div>

@@ -10,8 +10,8 @@ const SendMoneyPage = () => {
     <Layout page="recharge" sidebar>
       <div className="flex md:py-3 md:h-screen overflow-auto">
         <div className="md:max-w-xs w-full md:block hidden flex-shrink-0"></div>
-        <div className="bg-white md:rounded-l-4xl flex flex-col border-b border-app-gray-200 w-full">
-          <div className=" w-full p-8 flex flex-col gap-6 overflow-auto">
+        <div className="bg-white md:rounded-l-4xl flex flex-col border-b border-app-gray-200 w-full md:min-h-max min-h-screen">
+          <div className=" w-full p-4 sm:p-8 flex flex-col gap-6 overflow-auto">
             <div className=" pb-5">
               <p className="font-medium text-app-gray-900 text-3xl mt-2">
                 Send money to inmate
@@ -22,7 +22,7 @@ const SendMoneyPage = () => {
             </div>
             {step === 0 && (
               <div>
-                <div className="space-y-5 px-8">
+                <div className="space-y-5 sm:px-8">
                   <Input label="First Name: " required hint="Bruce" />
                   <Input label="Last Name: " required hint="Wayne" />
                   <Input
@@ -42,7 +42,7 @@ const SendMoneyPage = () => {
                   <Input label="Total Charge:" hint="$10.00" />
                   <Input label="Balance after Recharge: " hint="$10.00" />
                 </div>
-                <div className="flex items-center gap-5 w-full justify-center mt-14">
+                <div className="flex items-center gap-5 w-full justify-center mt-14 flex-col sm:flex-row">
                   <PrimaryButton
                     className="max-w-xs w-full"
                     action={() => setStep(1)}

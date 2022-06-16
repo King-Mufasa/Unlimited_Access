@@ -38,7 +38,7 @@ export const StandardButton = (props) => {
 export const MailButton = (props) => {
   const {className, icon, action, children} = props;
   return(
-    <button className={`${className} rounded-full shadow-md text-app-blue flex px-6 gap-4 items-center font-semibold text-xl hover:shadow-app-primary hover:scale-105 active:scale-100`}>
+    <button className={`${className} justify-center py-1 rounded-full shadow-md text-app-blue flex px-6 gap-4 items-center font-semibold text-xl hover:shadow-app-primary hover:scale-105 active:scale-100`}>
       <img src={`/assets/icon/ico_${icon}.svg`} alt={icon} />
       <p>{children}</p>
     </button>

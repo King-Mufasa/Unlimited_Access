@@ -24,7 +24,7 @@ export const SideBarItem = (props) => {
         <div
           className={`${
             location.pathname === path ? "bg-app-gray-700" : ""
-          } rounded-lg flex gap-3 p-5 xl:text-lg font-medium text-app-gray-100`}
+          } rounded-lg flex gap-3 p-4 font-medium text-app-gray-100`}
         >
           {icon ? (
             <img src={`/assets/icon/ico_${icon}.svg`} alt="icon" />
@@ -58,12 +58,12 @@ export const MailItem = (props) => {
           <img
             src="/assets/icon/ico_badge.svg"
             alt="badge"
-            className="animate-ping absolute right-0 bottom-0 translate-x-1 translate-y-1 transform"
+            className="animate-ping absolute right-0 bottom-0 translate-x-1 translate-y-1 transform flex-shrink-0"
           />
         )}
       </div>
-      <div className="w-full flex flex-col items-end gap-2">
-        <div className="flex justify-between w-full">
+      <div className="w-full flex items-end gap-2 flex-col ">
+        <div className="flex justify-between w-full flex-col sm:flex-row">
           <p className="text-app-gray-700 font-medium">{mail.sender}</p>
           <p className="text-app-gray-500 text-sm">
             {moment(mail.time).fromNow()}
@@ -96,3 +96,12 @@ export const SocialAppItem = (props) => {
     </div>
   );
 };
+
+export const InvoiceItem = (props) => {
+  const {className, data} = props
+  return(
+    <li>
+
+    </li>
+  )
+}

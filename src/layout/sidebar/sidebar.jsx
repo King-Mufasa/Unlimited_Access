@@ -52,7 +52,7 @@ const SideBar = () => {
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
               type="text"
-              className="bg-transparent w-full outline-none text-white xl:text-xl"
+              className="bg-transparent w-full outline-none text-white"
               placeholder="Search"
             />
           </div>
@@ -63,7 +63,7 @@ const SideBar = () => {
             <li>
               <button
                 className={`
-                     rounded-lg flex gap-3 p-5 xl:text-lg font-medium text-app-gray-100 w-full justify-between items-center`}
+                     rounded-lg flex gap-3 p-4 xl:text-lg font-medium text-app-gray-100 w-full justify-between items-center`}
                 onClick={() => setExpandEmail(!expandEmail)}
               >
                 <div className="flex gap-3">
