@@ -6,7 +6,7 @@ export const Input = (props) => {
       <input
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className={`w-full rounded-lg outline-none border border-app-gray-300 px-3.5 py-2.5`}
+        className={`focus:outline-app-primary hover:ring ring-app-primary-300 w-full rounded-lg outline-none border border-app-gray-300 px-3.5 py-2.5`}
         placeholder={hint}
         type={type}
       />
