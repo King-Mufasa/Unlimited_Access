@@ -41,7 +41,7 @@ function Dashboard() {
     <Layout page="dashboard" sidebar>
       <div className="flex md:py-3 md:h-screen overflow-auto">
         <div className="md:max-w-xs w-full md:block hidden flex-shrink-0"></div>
-        <div className="bg-white md:rounded-l-4xl flex flex-col border-b border-app-gray-200 w-full ">
+        <div className="bg-white md:rounded-l-4xl flex flex-col border-b border-app-gray-200 w-full md:min-h-max min-h-screen">
           <div className=" w-full p-8 flex flex-col overflow-auto sm:body-container">
             <div className=" pb-5">
               <div className="flex justify-between flex-col sm:flex-row gap-2 sm:items-center items-start">
@@ -58,7 +58,7 @@ function Dashboard() {
                   </div>
                 </PrimaryButton>
               </div>
-              <div className="flex items-center mt-4">
+              <div className="flex items-center mt-4 flex-col sm:flex-row w-full sm:w-auto">
                 {tabList.map((tab, idx) => (
                   <TabList
                     tabId={tab.tabId}
