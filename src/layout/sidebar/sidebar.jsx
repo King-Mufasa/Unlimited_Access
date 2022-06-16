@@ -112,11 +112,7 @@ const SideBar = () => {
               label="Text Services"
               icon="msg"
             />
-          </ul>
-        </div>
-        <div className="py-6 px-4">
-          <ul>
-            <SideBarItem path="/support" label="Support" icon="support" />
+             <SideBarItem path="/support" label="Support" icon="support" />
             <SideBarItem
               path="/account-manage"
               label="Account Management"
