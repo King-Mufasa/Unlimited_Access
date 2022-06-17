@@ -79,9 +79,11 @@ export const MailItem = (props) => {
 
 export const SocialAppItem = (props) => {
   const { className, app } = props;
-  const [enabled, setEnabled] = useState(app.enabled)
+  const [enabled, setEnabled] = useState(app.enabled);
   return (
-    <div className={`${className} flex w-full justify-between text-sm text-app-gray-500 py-5`}>
+    <div
+      className={`${className} flex w-full justify-between text-sm text-app-gray-500 py-5`}
+    >
       <div className="flex gap-5">
         <img src={`/assets/image/${app.logo}.svg`} alt={app.name} />
         <div>
@@ -91,17 +93,48 @@ export const SocialAppItem = (props) => {
       </div>
       <div className="flex items-center gap-4">
         <p className=" font-medium">Learn more</p>
-        <ToggleButton value={enabled} setValue={setEnabled}/>
+        <ToggleButton value={enabled} setValue={setEnabled} />
       </div>
     </div>
   );
 };
 
-export const InvoiceItem = (props) => {
-  const {className, data} = props
-  return(
-    <li>
+export const CardItem = (props) => {
+  const { className, card, selected, select } = props;
+  return (
+    <div
+      className={`${className} ${
+        selected === card.id
+          ? "text-app-primary border-app-primary-300 bg-app-primary-50"
+          : "bg-transparent text-app-gray-500"
+      } flex border rounded-lg items-start p-4 gap-3 justify-between cursor-pointer`}
+      onClick={()=>select(card.id)}
+    >
+      <div className="flex items-start gap-3">
+        <img src={`/assets/icon/ico_${card.name}.svg`} alt={card.name} />
+        <div>
+          <div className="">
+            <p className="font-medium">
+              <span className="capitalize">{card.name}</span>ending in 1234
+            </p>
+            <p>Expiry {card.expiry}</p>
+          </div>
+          <div className="flex gap-3 font-medium mt-2">
+            <button className="">Set as default</button>
+            <button className="text-app-primary">Edit</button>
+          </div>
+        </div>
+      </div>
+      <img
+        src={`/assets/icon/ico_check_${selected === card.id ? "on" : "off"}.svg`}
+        alt={selected === card.id ? "on" : "off"}
+        className="rounded-full w-6 h-6"
+      />
+    </div>
+  );
+};
 
-    </li>
-  )
-}
+export const InvoiceItem = (props) => {
+  const { className, data } = props;
+  return <li></li>;
+};

@@ -2,7 +2,7 @@ export const Input = (props) => {
   const { value, setValue, label, required, className, type = "text", hint="" } = props;
   return (
     <div className={`space-y-1 ${className}`}>
-      {label && <p>{`${label} ${required ? "*" : ""}`}</p>}
+      {label && <p className="text-app-gray-700">{`${label} ${required ? "*" : ""}`}</p>}
       <input
         value={value}
         onChange={(e) => setValue(e.target.value)}

@@ -42,7 +42,7 @@ function Dashboard() {
       <div className="flex md:py-3 md:h-screen overflow-auto">
         <div className="md:max-w-xs w-full md:block hidden flex-shrink-0"></div>
         <div className="bg-white md:rounded-l-4xl flex flex-col border-b border-app-gray-200 w-full md:min-h-max min-h-screen">
-          <div className=" w-full p-8 flex flex-col overflow-auto sm:body-container">
+          <div className=" w-full p-4 sm:p-8 flex flex-col overflow-auto sm:body-container">
             <div className=" pb-5">
               <div className="flex justify-between flex-col sm:flex-row gap-2 sm:items-center items-start">
                 <div>
@@ -194,7 +194,7 @@ function Dashboard() {
                       Change how you pay for your plan.
                     </p>
                     <div className="flex-1 flex items-center justify-center mt-5">
-                      <div className="border rounded-xl border-app-gray-200 flex justify-between w-full items-start p-4">
+                      <div className="border rounded-xl border-app-gray-200 flex justify-between w-full items-start p-4 flex-col sm:flex-row gap-2">
                         <div className="flex items-start gap-4 sm:flex-row flex-col">
                           <img src="/assets/image/logo_visa.svg" alt="visa" />
                           <div className="text-app-gray-500">
