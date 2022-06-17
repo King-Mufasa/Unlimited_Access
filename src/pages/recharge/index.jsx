@@ -88,6 +88,7 @@ const RechargePage = () => {
             )}
             {step === 2 && (
               <div className="items-center gap-12 flex flex-col flex-1 justify-center">
+                <img src="/assets/icon/ico_phone.svg" alt="phone"/>
                 <p className="text-2xl text-app-gray-500">
                   Transaction Result: Your account has been successfully
                   recharged. You have $10.00 available in your account.

@@ -17,6 +17,8 @@ import RechargePage from "./recharge";
 import SendMoneyPage from "./send-money";
 import PictureServicePage from "./service/picture";
 import TextServicePage from "./service/text";
+import AccountManagePage from "./account/manage";
+import SupportPage from "./support";
 
 const Pages = (props) => {
   return (
@@ -34,6 +36,8 @@ const Pages = (props) => {
           <Route path="/mail/sent" element={<EmailSentPage />} />
           <Route path="/mail/draft" element={<EmailDraftPage />} />
           <Route path="/account" element={<AccountPage />} />
+          <Route path="/support" element={<SupportPage />} />
+          <Route path="/account-manage" element={<AccountManagePage />} />
           <Route path="/recharge" element={<RechargePage />} />
           <Route path="/send-money" element={<SendMoneyPage />} />
           <Route path="/picture-service" element={<PictureServicePage />} />
