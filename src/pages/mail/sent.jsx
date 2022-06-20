@@ -1,6 +1,9 @@
+import { NegativeButton, PrimaryButton } from "../../components/button";
 import Layout from "../../layout/layout";
 
 const EmailSentPage = () => {
+  
+
   return (
     <Layout page="draft" sidebar>
       <div className="flex md:py-3 md:h-screen overflow-auto">

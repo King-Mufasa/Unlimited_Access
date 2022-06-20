@@ -28,7 +28,7 @@ function AccountManagePage() {
     value: "Dateline Standard Time",
     label: "(UTC-12:00) International Date Line West",
   });
-  const [country, setCountry] = useState({ label: "Hong Kong", value: "hk" });
+  const [country, setCountry] = useState({ label: "United States", value: "us" });
   const [cardId, setCardId] = useState(0);
   const tabList = [
     {
