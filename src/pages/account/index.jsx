@@ -9,7 +9,7 @@ import { countryList } from "../../utils/api";
 
 function AccountPage() {
   const [enableAlert, setEnableAlert] = useState(false);
-  const [country, setCountry] = useState({ label: "Hong Kong", value: "hk" });
+  const [country, setCountry] = useState({ label: "United States", value: "us" });
 
   return (
     <div className="flex flex-col min-h-screen ">
